@@ -1,0 +1,33 @@
+#!jinja2
+
+#Include settings (mainly the list of recipes for now)
+%include settings.rc
+
+[meta]
+	title = Magic pre-calculated metric set
+[cylc]
+	cycle point format = %Y-%m
+[scheduling]
+	initial cycle point = 2018-09
+	final cycle point = 2018-12
+	[[special tasks]]
+		clock-trigger = RECIPES
+	[[dependencies]]
+		[[[ P1M ]]]
+			graph = RECIPES
+[runtime]
+	[[RECIPES]]
+		[[[job submission]]]
+           		method = lsf
+		[[[directives]]]
+	            	-q = short-serial
+           		-W = 00:10
+            		-n = 1
+		[[[job]]]
+			execution retry delays = 3 * PT6S
+
+{% for i in recipes %}
+	[[{{ i|replace(".", "_")|replace("/", "-")}}]]
+		inherit = RECIPES
+		script = magic-esmvaltool.sh {{i}}
+{% endfor %}
