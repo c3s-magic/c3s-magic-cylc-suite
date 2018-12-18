@@ -1,0 +1,37 @@
+###############################################################################
+# User's configuration file for the ESMValTool
+###############################################################################
+---
+
+# Diagnostics create plots? [true]/false
+write_plots: true
+# Diagnositcs write NetCDF files? [true]/false
+write_netcdf: true
+# Set the console log level debug, [info], warning, error
+log_level: info
+# Exit on warning? true/[false]
+exit_on_warning: false
+# Plot file format? [ps]/pdf/png/eps/epsi
+output_file_type: png
+# Destination directory
+output_dir: /group_workspaces/jasmin2/cp4cds1/magic-demo/esmvaltool_output
+# Save intermediary cubes in the preprocessor true/[false]
+save_intermediary_cubes: false
+# Run at most this many tasks in parallel null/[1]/2/3/4/..
+# Set to null to use the number of available CPUs.
+# Make sure your system has enough memory for the specified number of tasks.
+max_parallel_tasks: 8
+
+rootpath:
+  # Rootpath to CMIP5 data
+  CMIP5: /group_workspaces/jasmin2/cp4cds1/data/c3s-cmip5/output1/
+  # Rootpath to OBS data
+  OBS: /group_workspaces/jasmin2/cp4cds1/data/dkrz_pool
+  obs4mips: /group_workspaces/jasmin2/cp4cds1/data/dkrz_pool
+  # Default
+  default: /group_workspaces/jasmin2/cp4cds1/data/dkrz_pool
+
+# Directory structure for input data: [default]/BADC/DKRZ/ETHZ/etc
+# See config-developer.yml for definitions.
+drs:
+  CMIP5: CP4CDS
