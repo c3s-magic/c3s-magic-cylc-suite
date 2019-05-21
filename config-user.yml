@@ -22,6 +22,8 @@ save_intermediary_cubes: false
 # Make sure your system has enough memory for the specified number of tasks.
 max_parallel_tasks: 8
 
+auxiliary_data_dir: /group_workspaces/jasmin2/cp4cds1/magic-demo/aux_data/
+
 rootpath:
   # Rootpath to CMIP5 data
   CMIP5: /group_workspaces/jasmin2/cp4cds1/data/c3s-cmip5/output1/
