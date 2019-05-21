@@ -9,5 +9,5 @@ config=/home/users/ndrost/c3s-magic-cylc-suite/config-user.yml
 
 echo Running recipe $1
 
-esmvaltool -c $config $1
+esmvaltool --skip-nonexistent -c $config $1
 
