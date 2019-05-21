@@ -8,8 +8,8 @@
 [cylc]
 	cycle point format = %Y-%m
 [scheduling]
-	initial cycle point = 2018-12
-	final cycle point = 2018-12
+	initial cycle point = 2019-03
+	final cycle point = 2019-03
 	[[special tasks]]
 		clock-trigger = RECIPES
 	[[dependencies]]
@@ -17,14 +17,13 @@
 			graph = RECIPES
 [runtime]
 	[[RECIPES]]
-		[[[job submission]]]
-           		method = lsf
 		[[[directives]]]
 	            	-q = par-single
            		-W = 05:00
             		-n = 10
 		[[[job]]]
-			execution retry delays = 3 * PT6S
+			#execution retry delays = 3 * PT6S
+           		batch system = lsf
 
 {% for i in recipes %}
 	[[{{ i|replace(".", "_")|replace("/", "-")}}]]
