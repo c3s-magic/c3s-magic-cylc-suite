@@ -1,0 +1,26 @@
+#!jinja2
+
+{% set recipes = [ 	"examples/recipe_python.yml",
+			"recipe_cvdp.yml",
+		   	"recipe_perfmetrics_CMIP5_4cds.yml",
+			"recipe_smpi_4cds.yml",
+			"recipe_miles_block.yml",
+			"recipe_zmnam.yml",
+			"recipe_modes_of_variability.yml",
+			"recipe_hyint.yml",
+			"recipe_quantilebias.yml",
+			"recipe_toymodel.yml",
+			"recipe_multimodel_products.yml",
+			"recipe_ensclus.yml",
+			"recipe_combined_indices.yml",
+			"recipe_miles_eof.yml",
+			"recipe_miles_regimes.yml",
+			"recipe_spei.yml",
+			"recipe_consecdrydays.yml",
+			"recipe_shapeselect.yml",
+			"recipe_rainfarm.yml",
+			"recipe_heatwaves_coldwaves.yml",
+			"recipe_diurnal_temperature_index.yml",
+			"recipe_capacity_factor.yml",
+			"recipe_extreme_index.yml"
+		 ] %}
